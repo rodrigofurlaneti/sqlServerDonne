@@ -1,0 +1,18 @@
+USE [Donne]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[USP_BuyerGetById] (@BuyerId INT)
+AS
+BEGIN
+	SELECT TOP 1 * 
+		FROM Buyer
+			WHERE BuyerId = @BuyerId;
+	SET NOCOUNT ON;
+END
+GO
