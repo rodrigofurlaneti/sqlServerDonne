@@ -1,0 +1,18 @@
+USE [Donne]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[USP_CategoryGetAll] 
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT * 
+		FROM Category
+			ORDER BY CategoryName ASC;
+END
+GO
