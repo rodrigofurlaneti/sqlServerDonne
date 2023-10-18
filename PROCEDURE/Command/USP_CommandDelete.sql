@@ -1,0 +1,19 @@
+USE [Donne]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[USP_CommandDelete] (@CommandId INT)
+AS
+BEGIN
+	DELETE FROM Command
+		WHERE CommandId = @CommandId
+	SET NOCOUNT ON;
+END
+GO
+
+
