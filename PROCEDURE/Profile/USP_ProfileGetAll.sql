@@ -1,0 +1,18 @@
+USE [Donne]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[USP_ProfileGetAll] 
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT *
+		FROM [dbo].[Profile]
+			ORDER BY ProfileName ASC;
+END
+GO
