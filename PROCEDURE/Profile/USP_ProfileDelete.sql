@@ -1,0 +1,19 @@
+USE [Donne]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[USP_ProfileDelete] (@ProfileId INT)
+AS
+BEGIN
+	DELETE FROM [dbo].[Profile]
+		WHERE ProfileId = @ProfileId
+	SET NOCOUNT ON;
+END
+GO
+
+
