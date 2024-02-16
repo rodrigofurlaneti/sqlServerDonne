@@ -7,13 +7,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_CategoryDelete] (@CategoryId INT)
+CREATE PROCEDURE [dbo].[USP_Donne_Category_Delete] (@CategoryId INT)
 AS
 BEGIN
-	DELETE FROM Category
+	DELETE FROM Donne_Category
 		WHERE CategoryId = @CategoryId
 	SET NOCOUNT ON;
 END
 GO
-
-

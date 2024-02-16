@@ -7,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_CategoryInsert] (@CategoryName VARCHAR(150), 
+CREATE PROCEDURE [dbo].[USP_Donne_Category_Insert] (@CategoryName VARCHAR(150), 
 											@DateInsert DATETIME,
 											@DateUpdate DATETIME,
 											@UserId INT,
@@ -15,7 +15,7 @@ CREATE PROCEDURE [dbo].[USP_CategoryInsert] (@CategoryName VARCHAR(150),
 
 AS
 BEGIN
-	INSERT INTO Category
+	INSERT INTO Donne_Category
                         (CategoryName,
 						 DateInsert,
 						 DateUpdate,
@@ -29,5 +29,3 @@ BEGIN
 	SET NOCOUNT ON;
 END
 GO
-
-

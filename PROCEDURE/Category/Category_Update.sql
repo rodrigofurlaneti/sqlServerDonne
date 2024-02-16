@@ -1,4 +1,5 @@
 USE [Donne]
+USE [Donne]
 GO
 
 SET ANSI_NULLS ON
@@ -7,8 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
-CREATE PROCEDURE [dbo].[USP_CategoryUpdate]	(@CategoryId INT,
+CREATE PROCEDURE [dbo].[USP_Donne_Category_Update]	(@CategoryId INT,
 											@CategoryName VARCHAR(50),
 											@DateInsert DATETIME,
 											@DateUpdate DATETIME,
@@ -17,7 +17,7 @@ CREATE PROCEDURE [dbo].[USP_CategoryUpdate]	(@CategoryId INT,
 
 AS
 BEGIN
-	UPDATE Category
+	UPDATE Donne_Category
 		SET CategoryName = @CategoryName,
 			DateInsert = @DateInsert,
 			DateUpdate = @DateUpdate,
@@ -27,5 +27,3 @@ BEGIN
 	SET NOCOUNT ON;
 END
 GO
-
-

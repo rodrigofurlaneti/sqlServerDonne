@@ -7,12 +7,12 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_CategoryGetAll] 
+CREATE PROCEDURE [dbo].[USP_Donne_Category_GetAll] 
 AS
 BEGIN
 	SET NOCOUNT ON;
 	SELECT * 
-		FROM Category
+		FROM Donne_Category
 			ORDER BY CategoryName ASC;
 END
 GO

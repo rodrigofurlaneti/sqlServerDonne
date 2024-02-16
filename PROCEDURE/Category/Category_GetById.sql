@@ -7,11 +7,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_CategoryGetById] (@CategoryId INT)
+CREATE PROCEDURE [dbo].[USP_Donne_Category_GetById] (@CategoryId INT)
 AS
 BEGIN
-	SELECT TOP 1 * FROM Category
+	SELECT TOP 1 * FROM Donne_Category
 		WHERE CategoryId = @CategoryId;
 	SET NOCOUNT ON;
 END
 GO
+
+
+
