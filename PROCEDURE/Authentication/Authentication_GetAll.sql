@@ -1,0 +1,17 @@
+USE [Donne]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[USP_Donne_Authentication_GetAll] 
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT * FROM [dbo].[Donne_Authentication];
+END
+GO
