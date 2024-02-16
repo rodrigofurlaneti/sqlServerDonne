@@ -7,15 +7,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
-CREATE PROCEDURE [dbo].[USP_CommandUpdate] (@CommandId INT,
+CREATE PROCEDURE [dbo].[USP_Donne_Command_Update] (@CommandId INT,
 									@BuyerId INT,
 									@BuyerName VARCHAR(150),
 									@DateInsert DATETIME,
 									@DateUpdate DATETIME,
 									@UserId INT,
 									@UserName VARCHAR(150),
-									@Status BIT)
+									@Status INT)
 	AS
 		BEGIN
 			UPDATE Command
@@ -30,5 +29,3 @@ CREATE PROCEDURE [dbo].[USP_CommandUpdate] (@CommandId INT,
 			SET NOCOUNT ON;
 		END
 GO
-
-

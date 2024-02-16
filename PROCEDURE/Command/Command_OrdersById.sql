@@ -7,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_CommandOrdersById] (@CommandId INT)
+CREATE PROCEDURE [dbo].[USP_Donne_Command_OrdersById] (@CommandId INT)
 AS
 BEGIN
 	SELECT	ORD.CommandId,
@@ -18,12 +18,10 @@ BEGIN
 			ORD.SalePrice,
 			ORD.Amount,
 			ORD.TotalSalePrice
-				FROM [dbo].[Command] AS COM
-				INNER JOIN [dbo].[Order] AS ORD
+				FROM [dbo].[Donne_Command] AS COM
+				INNER JOIN [dbo].[Donne_Order] AS ORD
 					ON COM.CommandId = ORD.CommandId
 						WHERE COM.CommandId = @CommandId;
 	SET NOCOUNT ON;
 END
 GO
-
-

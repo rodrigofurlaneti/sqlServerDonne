@@ -7,17 +7,18 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_CommandInsert] (@BuyerId INT,
+CREATE PROCEDURE [dbo].[USP_Donne_Command_InsertReturnId] (@BuyerId INT,
 											@BuyerName VARCHAR(50),
 											@DateInsert DATETIME,
 											@DateUpdate DATETIME,
 											@UserId INT,
 											@UserName VARCHAR(150),
-											@Status BIT)
+											@Status INT,
+											@Identity INT OUTPUT)
 
 AS
 BEGIN
-	INSERT INTO Command (BuyerId,
+	INSERT INTO Donne_Command (BuyerId,
 						 BuyerName,
 						 DateInsert,
 						 DateUpdate,
@@ -31,6 +32,7 @@ BEGIN
 					@UserId,
 					@UserName,
 					1)
+	SELECT SCOPE_IDENTITY()
 	UPDATE Buyer
 		SET DateUpdate = @DateUpdate,
 			UserId = @UserId,
@@ -40,5 +42,3 @@ BEGIN
 	SET NOCOUNT ON;
 END
 GO
-
-

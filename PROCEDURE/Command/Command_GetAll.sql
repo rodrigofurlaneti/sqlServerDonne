@@ -7,14 +7,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_CommandGetAll] 
+CREATE PROCEDURE [dbo].[USP_Donne_Command_GetAll] 
 AS
 BEGIN
 	SET NOCOUNT ON;
 	SELECT * 
-		FROM Command
+		FROM Donne_Command
 			WHERE Status = 1
 			ORDER BY CommandId ASC;
 END
 GO
-
