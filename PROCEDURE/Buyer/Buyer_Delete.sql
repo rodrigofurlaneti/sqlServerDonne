@@ -7,16 +7,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
-
-
-CREATE PROCEDURE [dbo].[USP_BuyerDelete] (@BuyerId INT)
+CREATE PROCEDURE [dbo].[USP_Donne_Buyer_Delete] (@BuyerId INT)
 AS
 BEGIN
-	DELETE FROM Buyer
+	DELETE FROM Donne_Buyer
 		WHERE BuyerId = @BuyerId
 	SET NOCOUNT ON;
 END
 GO
-
-

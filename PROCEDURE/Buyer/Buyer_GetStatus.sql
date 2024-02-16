@@ -7,12 +7,12 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_BuyerGetStatus] (@Status BIT)
+CREATE PROCEDURE [dbo].[USP_Donne_Buyer_GetStatus] (@Status BIT)
 AS
 BEGIN
 	SET NOCOUNT ON;
 	SELECT * 
-		FROM Buyer
+		FROM Donne_Buyer
 			WHERE Status = @Status
 			ORDER BY BuyerName ASC;
 END

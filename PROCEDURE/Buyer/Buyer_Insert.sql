@@ -7,17 +7,18 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_BuyerInsert] (	@BuyerName VARCHAR(50),
+CREATE PROCEDURE [dbo].[USP_Donne_Buyer_Insert] (	@BuyerName VARCHAR(50),
 											@BuyerPhone VARCHAR(50),
 											@BuyerAddress VARCHAR(100),
 											@DateInsert DATETIME,
 											@DateUpdate DATETIME,
 											@UserId INT,
-											@UserName VARCHAR(150))
+											@UserName VARCHAR(150),
+											@Status INT)
 
 AS
 BEGIN
-	INSERT INTO Buyer	(BuyerName, 
+	INSERT INTO Donne_Buyer	(BuyerName, 
 						BuyerPhone, 
 						BuyerAddress,
 						DateInsert,
@@ -32,7 +33,7 @@ BEGIN
 					@DateUpdate,
 					@UserId,
 					@UserName,
-					0)
+					@Status)
 	SET NOCOUNT ON;
 END
 GO

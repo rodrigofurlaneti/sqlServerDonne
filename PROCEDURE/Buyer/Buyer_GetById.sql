@@ -1,0 +1,18 @@
+USE [Donne]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[USP_Donne_Buyer_GetAll] 
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT * 
+		FROM Donne_Buyer
+			ORDER BY BuyerName ASC;
+END
+GO
