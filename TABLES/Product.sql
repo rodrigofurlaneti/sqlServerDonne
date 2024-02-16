@@ -7,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Product](
+CREATE TABLE [dbo].[Donne_Product](
 	[ProductId] [int] IDENTITY(1,1) NOT NULL,
 	[ProductName] [varchar](150) NULL,
 	[CategoryId] [int] NULL,
@@ -20,14 +20,16 @@ CREATE TABLE [dbo].[Product](
 	[TotalValueSaleStock] [varchar](50) NULL,
 	[DateInsert] [datetime] NULL,
 	[DateUpdate] [datetime] NULL,
-	[NeedToPrint] [bit] NULL,
-	[Status] [bit] NULL,
+	[NeedToPrint] [int] NULL,
+	[Status] [int] NULL,
 	[UserId] [int] NULL,
 	[UserName] [varchar](150) NULL,
+	[QuantityToBuy] [int] NULL,
+	[TotalValueOfLastPurchase] [varchar](50) NULL,
  CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
 (
 	[ProductId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 

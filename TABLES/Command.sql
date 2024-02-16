@@ -7,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Command](
+CREATE TABLE [dbo].[Donne_Command](
 	[CommandId] [int] IDENTITY(1,1) NOT NULL,
 	[BuyerId] [int] NULL,
 	[BuyerName] [varchar](50) NULL,
@@ -15,11 +15,11 @@ CREATE TABLE [dbo].[Command](
 	[DateUpdate] [datetime] NULL,
 	[UserId] [int] NULL,
 	[UserName] [varchar](150) NULL,
-	[Status] [bit] NULL,
+	[Status] [int] NULL,
  CONSTRAINT [PK_Command] PRIMARY KEY CLUSTERED 
 (
 	[CommandId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 
