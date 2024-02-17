@@ -7,10 +7,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_OrderUpdate] (@OrderId INT,
+CREATE PROCEDURE [dbo].[USP_Donne_Order_Update] (@OrderId INT,
 										 @CommandId INT,
 										 @ProductId INT,
 										 @ProductName VARCHAR(150),
+										 @BuyerName VARCHAR(50),
 										 @SalePrice VARCHAR(50),
 										 @Amount INT,
 										 @TotalSalePrice VARCHAR(50),
@@ -21,13 +22,14 @@ CREATE PROCEDURE [dbo].[USP_OrderUpdate] (@OrderId INT,
 
 AS
 BEGIN
-	UPDATE [dbo].[Order]
+	UPDATE [dbo].[Donne_Order]
     SET CommandId = @CommandId,
 		ProductId = @ProductId,
         ProductName = @ProductName,
-		SalePrice = @SalePrice,
+		BuyerName = @BuyerName,
+		SalePrice = CONVERT(decimal(11,2),@SalePrice),
 		Amount = @Amount,
-		TotalSalePrice = @TotalSalePrice,
+		TotalSalePrice = CONVERT(decimal(11,2), @TotalSalePrice),
 		DateInsert = @DateInsert,
 		DateUpdate = @DateUpdate,
 		UserId = @UserId,
@@ -36,5 +38,3 @@ BEGIN
 	SET NOCOUNT ON;
 END
 GO
-
-

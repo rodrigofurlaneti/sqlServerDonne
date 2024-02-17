@@ -7,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_FormOfPaymentInsert] (@FormOfPaymentName VARCHAR(50),
+CREATE PROCEDURE [dbo].[USP_Donne_FormOfPayment_Insert] (@FormOfPaymentName VARCHAR(50),
 												@DateInsert DATETIME,
 												@DateUpdate DATETIME,
 												@UserId INT,
@@ -15,7 +15,7 @@ CREATE PROCEDURE [dbo].[USP_FormOfPaymentInsert] (@FormOfPaymentName VARCHAR(50)
 
 AS
 BEGIN
-	INSERT INTO FormOfPayment (FormOfPaymentName,
+	INSERT INTO Donne_FormOfPayment (FormOfPaymentName,
 						DateInsert,
 						DateUpdate,
 						UserId,
@@ -29,5 +29,3 @@ BEGIN
 	SET NOCOUNT ON;
 END
 GO
-
-

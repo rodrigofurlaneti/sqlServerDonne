@@ -7,11 +7,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_FormOfPaymentGetById] (@FormOfPaymentId INT)
+CREATE PROCEDURE [dbo].[USP_Donne_FormOfPayment_GetById] (@FormOfPaymentId INT)
 AS
 BEGIN
 	SELECT TOP 1 * 
-		FROM FormOfPayment
+		FROM Donne_FormOfPayment
 			WHERE FormOfPaymentId = @FormOfPaymentId;
 	SET NOCOUNT ON;
 END

@@ -7,10 +7,10 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_OrderGetById] (@OrderId INT)
+CREATE PROCEDURE [dbo].[USP_Donne_Order_GetById] (@OrderId INT)
 AS
 BEGIN
-	SELECT TOP 1 * FROM [dbo].[Order]
+	SELECT TOP 1 * FROM [dbo].[Donne_Order]
 		WHERE OrderId = @OrderId;
 	SET NOCOUNT ON;
 END

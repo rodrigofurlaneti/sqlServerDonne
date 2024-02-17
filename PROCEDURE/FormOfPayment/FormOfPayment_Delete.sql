@@ -7,10 +7,10 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_FormOfPaymentDelete] (@FormOfPaymentId INT)
+CREATE PROCEDURE [dbo].[USP_Donne_FormOfPayment_Delete] (@FormOfPaymentId INT)
 AS
 BEGIN
-	DELETE FROM FormOfPayment
+	DELETE FROM Donne_FormOfPayment
 		WHERE FormOfPaymentId = @FormOfPaymentId
 	SET NOCOUNT ON;
 END

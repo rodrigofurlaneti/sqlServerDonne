@@ -7,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-ALTER PROCEDURE [dbo].[USP_OrderGetAll] 
+CREATE PROCEDURE [dbo].[USP_Donne_Order_GetAll] 
 AS
 BEGIN
 	SET NOCOUNT ON;
@@ -15,6 +15,7 @@ BEGIN
 			ORD.CommandId,
 			ORD.ProductId,
 			ORD.ProductName,
+			ORD.BuyerName,
 			ORD.SalePrice,
 			ORD.Amount,
 			ORD.TotalSalePrice,
@@ -22,9 +23,6 @@ BEGIN
 			ORD.DateUpdate,
 			ORD.UserId,
 			ORD.UserName
-		FROM [dbo].[Order] AS ORD
+		FROM [dbo].[Donne_Order] AS ORD
 END
 GO
-
-
-
