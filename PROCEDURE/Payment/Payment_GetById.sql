@@ -1,0 +1,18 @@
+USE [Donne]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[USP_Donne_Payment_GetById] (@PaymentId INT)
+AS
+BEGIN
+	SELECT TOP 1 * 
+		FROM Donne_Payment
+			WHERE PaymentId = @PaymentId;
+	SET NOCOUNT ON;
+END
+GO

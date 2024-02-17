@@ -1,0 +1,18 @@
+USE [Donne]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[USP_Donne_Payment_GetAll] 
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT * 
+		FROM Donne_Payment
+			ORDER BY PaymentId ASC;
+END
+GO
