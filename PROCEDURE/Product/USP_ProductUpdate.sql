@@ -7,7 +7,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_ProductUpdate] (@ProductId INT,
+
+CREATE PROCEDURE [dbo].[USP_Donne_Product_Update] (@ProductId INT,
 									@ProductName VARCHAR(150),
 									@CategoryId INT,
 									@CategoryName VARCHAR(150),
@@ -19,32 +20,34 @@ CREATE PROCEDURE [dbo].[USP_ProductUpdate] (@ProductId INT,
 									@TotalValueSaleStock VARCHAR(50),
 									@DateInsert DATETIME,
 									@DateUpdate DATETIME,
-									@NeedToPrint BIT,
+									@NeedToPrint INT,
 									@UserId INT,
 									@UserName VARCHAR(150),
-									@Status BIT)
+									@Status INT,
+									@QuantityToBuy INT,
+									@TotalValueOfLastPurchase VARCHAR(50))
 
 AS
 BEGIN
-	UPDATE Product
+	UPDATE Donne_Product
     SET ProductName = @ProductName,
 		CategoryId = @CategoryId,
         CategoryName = @CategoryName,
-        CostPrice = @CostPrice,
-		SalePrice = @SalePrice,
+        CostPrice = CONVERT(decimal(11,2), @CostPrice),
+		SalePrice = CONVERT(decimal(11,2), @SalePrice),
 		QuantityStock = @QuantityStock,
 		MinimumStockQuantity = @MinimumStockQuantity,
-		TotalValueCostOfInventory = @TotalValueCostOfInventory,
-		TotalValueSaleStock = @TotalValueSaleStock,
+		TotalValueCostOfInventory = CONVERT(decimal(11,2), @TotalValueCostOfInventory),
+		TotalValueSaleStock = CONVERT(decimal(11,2), @TotalValueSaleStock),
 		DateInsert = @DateInsert,
 		DateUpdate = @DateUpdate,
 		NeedToPrint = @NeedToPrint,
 		UserId = @UserId,
 		UserName = @UserName,
-		Status = @Status
+		Status = @Status,
+		QuantityToBuy = @QuantityToBuy,
+		TotalValueOfLastPurchase = CONVERT(decimal(11,2), @TotalValueOfLastPurchase)
 			WHERE ProductId = @ProductId
 	SET NOCOUNT ON;
 END
 GO
-
-

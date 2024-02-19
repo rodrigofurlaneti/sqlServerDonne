@@ -7,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_ProductInsert] (@ProductName VARCHAR(150),
+CREATE PROCEDURE [dbo].[USP_Donne_Product_Insert] (@ProductName VARCHAR(150),
 									@CategoryId INT,
 									@CategoryName VARCHAR(150),
 									@CostPrice VARCHAR(50),
@@ -18,14 +18,16 @@ CREATE PROCEDURE [dbo].[USP_ProductInsert] (@ProductName VARCHAR(150),
 									@TotalValueSaleStock VARCHAR(50),
 									@DateInsert DATETIME,
 									@DateUpdate DATETIME,
-									@NeedToPrint BIT,
+									@NeedToPrint INT,
 									@UserId INT,
 									@UserName VARCHAR(150),
-									@Status BIT)
+									@Status INT,
+									@QuantityToBuy INT,
+									@TotalValueOfLastPurchase VARCHAR(50))
 
 AS
 BEGIN
-	INSERT INTO Product
+	INSERT INTO Donne_Product
                         (ProductName,
                          CategoryId,
                          CategoryName,
@@ -40,12 +42,14 @@ BEGIN
 						 NeedToPrint,
                          UserId,
                          UserName,
-  					 Status)
+  						 Status,
+						 QuantityToBuy,
+						 TotalValueOfLastPurchase)
             VALUES     ( @ProductName,
                          @CategoryId,
                          @CategoryName,
-                         @CostPrice,
-                         @SalePrice,
+                         CONVERT(decimal(11,2), @CostPrice),
+                         CONVERT(decimal(11,2), @SalePrice),
 						 @QuantityStock,
 						 @MinimumStockQuantity,
 						 CONVERT(decimal(11,2), @TotalValueCostOfInventory),
@@ -55,9 +59,9 @@ BEGIN
 						 @NeedToPrint,
 						@UserId,
 						@UserName,
-						@Status)
+						@Status,
+						@QuantityToBuy,
+						CONVERT(decimal(11,2), @TotalValueOfLastPurchase))
 	SET NOCOUNT ON;
 END
 GO
-
-
