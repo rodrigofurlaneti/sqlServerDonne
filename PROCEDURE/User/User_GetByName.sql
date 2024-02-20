@@ -7,10 +7,10 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_UserGetByName] (@UserName VARCHAR(50))
+CREATE PROCEDURE [dbo].[USP_Donne_User_GetByName] (@UserName VARCHAR(50))
 AS
 BEGIN
-	SELECT TOP 1 * FROM [dbo].[User]
+	SELECT TOP 1 * FROM [dbo].[Donne_User]
 		WHERE UserName = @UserName;
 	SET NOCOUNT ON;
 END

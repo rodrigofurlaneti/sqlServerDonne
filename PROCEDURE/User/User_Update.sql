@@ -7,16 +7,17 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_UserUpdate]   (@UserId INT,
+
+CREATE PROCEDURE [dbo].[USP_Donne_User_Update]   (@UserId INT,
 											@UserName VARCHAR(50),
 											@UserPassword VARCHAR(50),
 											@ProfileId INT,
 											@ProfileName VARCHAR(50),
-											@Status BIT)
+											@Status INT)
 
 AS
 BEGIN
-	UPDATE [dbo].[User]
+	UPDATE [dbo].[Donne_User]
     SET UserName = @UserName,
 		UserPassword = @UserPassword,
 		ProfileId = @ProfileId,
@@ -26,5 +27,3 @@ BEGIN
 	SET NOCOUNT ON;
 END
 GO
-
-

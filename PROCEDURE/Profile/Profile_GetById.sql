@@ -7,13 +7,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_ProfileGetById] (@ProfileId INT)
+CREATE PROCEDURE [dbo].[USP_Donne_Profile_GetById] (@ProfileId INT)
 AS
 BEGIN
-	SELECT TOP 1 * FROM [dbo].[Profile]
+	SELECT TOP 1 * FROM [dbo].[Donne_Profile]
 		WHERE ProfileId = @ProfileId;
 	SET NOCOUNT ON;
 END
 GO
-
-

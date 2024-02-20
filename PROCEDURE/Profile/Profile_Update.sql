@@ -7,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_ProfileUpdate] (@ProfileId INT,
+CREATE PROCEDURE [dbo].[USP_Donne_Profile_Update] (@ProfileId INT,
 												@ProfileName VARCHAR(50),
 												@DateInsert DATETIME,
 												@DateUpdate DATETIME,
@@ -15,7 +15,7 @@ CREATE PROCEDURE [dbo].[USP_ProfileUpdate] (@ProfileId INT,
 												@UserName VARCHAR(150))
 AS
 BEGIN
-	UPDATE [dbo].[Profile]
+	UPDATE [dbo].[Donne_Profile]
     SET ProfileName = @ProfileName,
 		DateInsert = @DateInsert,
 		DateUpdate = @DateUpdate,
@@ -25,5 +25,3 @@ BEGIN
 	SET NOCOUNT ON;
 END
 GO
-
-

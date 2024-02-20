@@ -7,13 +7,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_UserDelete] (@UserId INT)
+CREATE PROCEDURE [dbo].[USP_Donne_User_Delete] (@UserId INT)
 AS
 BEGIN
-	DELETE FROM [dbo].[User]
+	DELETE FROM [dbo].[Donne_User]
 		WHERE UserId = @UserId
 	SET NOCOUNT ON;
 END
 GO
-
-

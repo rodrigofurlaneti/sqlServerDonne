@@ -7,12 +7,10 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[USP_UserGetAll] 
+CREATE PROCEDURE [dbo].[USP_Donne_User_GetAll] 
 AS
 BEGIN
 	SET NOCOUNT ON;
-	SELECT * FROM [dbo].[User];
+	SELECT * FROM [dbo].[Donne_User];
 END
 GO
-
-
